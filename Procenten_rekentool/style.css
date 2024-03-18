@@ -1,0 +1,21 @@
+html, body{
+    overflow: hidden;
+}
+p{
+    text-align: left;
+}
+ul{
+    text-align: left;
+}
+#card_oud{
+    width: 18rem; 
+    margin-top: 40vh;
+}
+#card_middle{
+    margin-top: 5vh; 
+    width: 40rem;
+}
+#card_new{
+    width: 18rem;
+    margin-top: 40vh;
+}
