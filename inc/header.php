@@ -38,11 +38,12 @@
                                 Rekenen
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/tafels/">Tafels</a></li>
-                                <li><a class="dropdown-item" href="/tafelsoefenen/">Tafels oefenen</a></li>
-                                <li><a class="dropdown-item" href="/eenheidrekending/">eenheden berekenen</a></li>
-                                <li><a class="dropdown-item" href="/drietalsom/">drie tal som</a></li>
-                                <li><a class="dropdown-item" href="/Som-Som-magie-2">Som-Som-magie</a></li>
+                                <li><a class="dropdown-item" href="../tafels/index.php">Tafels</a></li>
+                                <li><a class="dropdown-item" href="../tafelsoefenen/index.php">Tafels oefenen</a></li>
+                                <li><a class="dropdown-item" href="../eenheidrekending/index.php">eenheden berekenen</a></li>
+                                <li><a class="dropdown-item" href="../drietalsom/index.php">drie tal som</a></li>
+                                <li><a class="dropdown-item" href="../Som-Som-magie-2/index.php">Som-Som-magie</a></li>
+                                <li><a class="dropdown-item" href="../Procenten_rekentool/index.php">procenten rekenen</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
