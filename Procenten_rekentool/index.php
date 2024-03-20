@@ -5,73 +5,74 @@ include "../inc/header.php";
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
  
-    <div class="container text-center">
+<div class="container">
         <div class="row">
-          <div class="col">
-            <div class="card" id="card_oud">
-                <div class="card-body">
-                  <h5 class="card-title">Oud</h5>
-                  <p>denk ook aan:</p>
-                  <ul>
-                    <li>zonder btw</li>
-                    <li>zonder korting</li>
-                  </ul>
-                  <input type="text" id="oud" class="form-control is-invalid">
-                </div>
-              </div>    
-          </div>
-          <div class="col-6">
-            <div class="card" id="card_middle">
-                <div class="card-body">
+            <div class="col-3">
+                <!-- linker card -->
+                <div class="card" style="margin-top: 200px">
+                    <div class="card-header">
+                      Oud
+                    </div>
+                    <div class="card-body">
+                        Denk ook aan:<br>
+                        <ul>
+                            <li>zonder of exclusief BTW</li>
+                            <li>zonder of exclusief korting</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      <input id="oud" class="form-control is-invalid" onchange="checkInput()">
+                    </div>
+                  </div>
+                <!-- einde linker card -->
+            </div>
+            <div class="col-4">
+                <select id="soort" class="form-select mt-4 mb-3 is-invalid" onchange="checkInput()">
+                    <option value="" selected>Kies....</option>
+                    <option value="1">van</option>
+                    <option value="2">toename</option>
+                    <option value="3">afname</option>
+                  </select>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text">Percentage</span>
+                    <input id="percentage" type="text" class="form-control is-invalid" onchange="checkInput()">
+                    <span class="input-group-text">%</span>
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text">Vermenigvuldigingsfactor: x</span>
+                    <input id="vFactor" type="text" class="form-control" disabled>
+                  </div>
+                  <img src="img/1184.png" alt="" class="img-fluid">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text">Deelfactor: /</span>
+                    <input id="dFactor" type="text" class="form-control" disabled>
+                  </div>
+                  <div class="d-grid">
+                    <button id="losop_btn" class="btn btn-success" disabled onclick="solveProblem()">Los op</button>
+                  </div>
+            </div>
+            <div class="col-3">
+                <!-- rechter card -->
+                <div class="card" style="margin-top: 200px">
+                    <div class="card-header">
+                      Nieuw
+                    </div>
+                    <div class="card-body">
+                        Denk ook aan:<br>
+                        <ul>
+                            <li>met of inclusief BTW</li>
+                            <li>met of inclusief korting</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      <input id="nieuw" class="form-control is-invalid" onchange="checkInput()">
+                    </div>
+                  </div>
+                <!-- einde rechter card -->
+            </div>
 
-                    <select id="soort" class="form-select is-invalid" aria-label="Default select example">
-                        <option selected>kies*</option>
-                        <option value="1">van</option>
-                        <option value="2">toename</option>
-                        <option value="2">afname</option>
-                      </select><br>
-
-                      <div class="input-group mb-3">
-                        <span class="input-group-text">percentage</span>
-                        <input type="text" class="form-control is-invalid">
-                        <span id="percentage" class="input-group-text">%</span>
-                      </div>
-                    
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">vermenigvuldigings factor</span>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
-                      </div>
-
-                </div>
-              </div>
-
-
-              <img src="img/1184.png" alt="">
-
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">delings factor</span>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
-              </div>
-
-              <button type="button" style="width: 30vw;" disabled onclick="solveProblem()" class="btn btn-success">los op</button>
-              
-          </div>
-          <div class="col">
-            <div class="card" id="card_new">
-                <div class="card-body">
-                  <h5 class="card-title">nieuw</h5>
-                  <p>denk ook aan:</p>
-                  <ul>
-                    <li>met btw</li>
-                    <li>met korting</li>
-                  </ul>
-                  <input type="text" id="nieuw" class="form-control is-invalid">
-                </div>
-        </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-</body>
-</html>
+  </body>
