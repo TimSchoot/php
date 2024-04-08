@@ -43,7 +43,7 @@
                                 <li><a class="dropdown-item" href="../eenheidrekending/index.php">eenheden berekenen</a></li>
                                 <li><a class="dropdown-item" href="../drietalsom/index.php">drie tal som</a></li>
                                 <li><a class="dropdown-item" href="../Som-Som-magie-2/index.php">Som-Som-magie</a></li>
-                                <li><a class="dropdown-item" href="../Procenten_rekentool/index.php">procenten rekenen (werkt niet)</a></li>
+                                <li><a class="dropdown-item" href="../Procenten_rekentool/index.php">procenten rekenen</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
