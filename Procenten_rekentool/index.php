@@ -27,9 +27,9 @@ include "../inc/header.php";
             <div class="col-4">
                 <select id="soort" class="form-select mt-4 mb-3 is-invalid" onchange="checkInput()">
                     <option value="" selected>Kies....</option>
-                    <option value="1">van</option>
-                    <option value="2">toename</option>
-                    <option value="3">afname</option>
+                    <option value="0">van</option>
+                    <option value="1">toename</option>
+                    <option value="2">afname</option>
                   </select>
                   <div class="input-group mb-3">
                     <span class="input-group-text">Percentage</span>
