@@ -6,8 +6,19 @@ const sudokus = [
     [4,0,3,0,5,2,6,0,0,0,0,2,0,8,6,3,0,0,0,0,0,0,1,3,4,2,7,1,6,0,0,0,4,0,9,0,0,3,0,0,0,5,0,4,0,0,7,0,0,9,0,5,0,0,9,0,0,0,0,0,0,0,6,3,0,0,8,2,7,0,0,1,5,8,0,3,0,0,0,0,0],
     [0,0,2,0,0,0,4,3,8,4,3,9,0,0,5,0,0,2,8,0,0,2,0,3,0,0,5,6,0,0,9,5,0,0,0,0,5,9,4,0,0,0,8,2,0,7,0,0,0,6,4,0,9,0,0,0,0,0,0,8,1,6,0,0,4,0,0,0,0,0,0,0,2,8,0,4,0,9,3,0,0],
     [0,0,0,7,3,0,0,0,9,2,8,9,0,0,0,7,0,0,7,0,0,0,8,0,2,6,0,8,0,0,0,0,5,6,0,4,6,3,0,0,0,0,0,0,0,0,0,0,8,0,9,0,0,5,0,0,8,0,5,0,3,2,6,5,0,0,2,4,0,9,0,0,3,1,0,6,0,0,0,0,7]
+]
+let idmapping = [
+    [0,0,0],
+    [1,1,1],[1,2,1],[1,3,1],[1,4,2],[1,5,2],[1,6,2],[1,7,3],[1,8,3],[1,9,3],
+    [2,1,1],[2,2,1],[2,3,1],[2,4,2],[2,5,2],[2,6,2],[2,7,3],[2,8,3],[2,9,3],
+    [3,1,1],[3,2,1],[3,3,1],[3,4,2],[3,5,2],[3,6,2],[3,7,3],[3,8,3],[3,9,3],
+    [4,1,4],[4,2,4],[4,3,4],[4,4,5],[4,5,5],[4,6,5],[4,7,6],[4,8,6],[4,9,6],
+    [5,1,4],[5,2,4],[5,3,4],[5,4,5],[5,5,5],[5,6,5],[5,7,6],[5,8,6],[5,9,6],
+    [6,1,4],[6,2,4],[6,3,4],[6,4,5],[6,5,5],[6,6,5],[6,7,6],[6,8,6],[6,9,6],
+    [7,1,7],[7,2,7],[7,3,7],[7,4,8],[7,5,8],[7,6,8],[7,7,9],[7,8,9],[7,9,9],
+    [8,1,7],[8,2,7],[8,3,7],[8,4,8],[8,5,8],[8,6,8],[8,7,9],[8,8,9],[8,9,9],
+    [9,1,7],[9,2,7],[9,3,7],[9,4,8],[9,5,8],[9,6,8],[9,7,9],[9,8,9],[9,9,9],
 ];
-
 let rij1 = [];
 let rij2 = [];
 let rij3 = [];
@@ -36,79 +47,123 @@ let blok7 = [];
 let blok8 = [];
 let blok9 = [];
 
-let idmapping = [
-    [0,0,0],
-    [rij1,kolom1,blok1],[rij1,kolom2,blok1],[rij1,kolom3,blok1],[rij1,kolom4,blok2],[rij1,kolom5,blok2],[rij1,kolom6,blok2],[rij1,kolom7,blok3],[rij1,kolom8,blok3],[rij1,kolom9,blok3],
-    [rij2,kolom1,blok1],[rij2,kolom2,blok1],[rij2,kolom3,blok1],[rij2,kolom4,blok2],[rij2,kolom5,blok2],[rij2,kolom6,blok2],[rij2,kolom7,blok3],[rij2,kolom8,blok3],[rij2,kolom9,blok3],
-    [rij3,kolom1,blok1],[rij3,kolom2,blok1],[rij3,kolom3,blok1],[rij3,kolom4,blok2],[rij3,kolom5,blok2],[rij3,kolom6,blok2],[rij3,kolom7,blok3],[rij3,kolom8,blok3],[rij3,kolom9,blok3],
-    [rij4,kolom1,blok4],[rij4,kolom2,blok4],[rij4,kolom3,blok4],[rij4,kolom4,blok5],[rij4,kolom5,blok5],[rij4,kolom6,blok5],[rij4,kolom7,blok6],[rij4,kolom8,blok6],[rij4,kolom9,blok6],
-    [rij5,kolom1,blok4],[rij5,kolom2,blok4],[rij5,kolom3,blok4],[rij5,kolom4,blok5],[rij5,kolom5,blok5],[rij5,kolom6,blok5],[rij5,kolom7,blok6],[rij5,kolom8,blok6],[rij5,kolom9,blok6],
-    [rij6,kolom1,blok4],[rij6,kolom2,blok4],[rij6,kolom3,blok4],[rij6,kolom4,blok5],[rij6,kolom5,blok5],[rij6,kolom6,blok5],[rij6,kolom7,blok6],[rij6,kolom8,blok6],[rij6,kolom9,blok6],
-    [rij7,kolom1,blok7],[rij7,kolom2,blok7],[rij7,kolom3,blok7],[rij7,kolom4,blok8],[rij7,kolom5,blok8],[rij7,kolom6,blok8],[rij7,kolom7,blok9],[rij7,kolom8,blok9],[rij7,kolom9,blok9],
-    [rij8,kolom1,blok7],[rij8,kolom2,blok7],[rij8,kolom3,blok7],[rij8,kolom4,blok8],[rij8,kolom5,blok8],[rij8,kolom6,blok8],[rij8,kolom7,blok9],[rij8,kolom8,blok9],[rij8,kolom9,blok9],
-    [rij9,kolom1,blok7],[rij9,kolom2,blok7],[rij9,kolom3,blok7],[rij9,kolom4,blok8],[rij9,kolom5,blok8],[rij9,kolom6,blok8],[rij9,kolom7,blok9],[rij9,kolom8,blok9],[rij9,kolom9,blok9],
-];
+let activeId = 0;
 
-let activeCellId = 0;
-
-let sudoku_string = "<ul>";
-for(i=1; i<=81; i++){
-    sudoku_string += `<li id="${i}" onclick="activateCell(${i})"><span></span></li>`;
+let sudokustring = "<ul>";
+for (i = 1; i <= 81; i++)
+{
+    sudokustring += `<li id="${i}" onclick="activateCell(${i})"><span></span></li>`;
 }
-sudoku_string += "</ul>";
-document.getElementById("sudoku").innerHTML = sudoku_string;
+sudokustring += "</ul>";
+document.getElementById("sudoku").innerHTML = sudokustring;
 
 function selectCijfer(cijfer)
 {
-    if (activeCellId == 0) {
+    if(activeId == 0){
         return
     }
-     else {
-        document.getElementById(activeId).innerText = cijfer;
-        idmapping[activeId][0].push(cijfer);
-        idmapping[activeId][1].push(cijfer);        
-        idmapping[activeId][2].push(cijfer);        
+    if(eval("rij" + idmapping[activeId][0]).includes(cijfer)){
+        alert("kan niet");
+    }
+    else {
+        if(eval("kolom" + idmapping[activeId][1]).includes(cijfer)){
+            alert("kan niet");
+        }
+        else 
+        {
+            if(eval("blok" + idmapping[activeId][2]).includes(cijfer)){
+                alert("kan niet");
+            }
+            else {
+                document.getElementById(activeId).innerText = cijfer;
+                eval("rij" + idmapping[activeId][0]).push(cijfer);
+                eval("kolom" + idmapping[activeId][1]).push(cijfer);
+                eval("blok" + idmapping[activeId][2]).push(cijfer)
+            }
+        }
     }
     console.log(rij1);
     console.log(kolom1);
     console.log(blok1);
 }
 
-function activateCell(id){
-    if (document.getElementById(activeCellId).classList.remove("bg-primary-subtle") == true){
-    } else{
-    document.getElementById(activeCellId).classList.remove("bg-primary-subtle")
-    activeCellId = id;
-    document.getElementById(id).classList.add("bg-primary-subtle")}
+function activateCell(id)
+{
+    if(!document.getElementById(id).classList.contains("bg-secondary-subtle"))
+    {
+        document.getElementById(activeId).classList.remove("bg-primary-subtle");
+        activeId = id;
+        document.getElementById(id).classList.add("bg-primary-subtle")
+    }
 }
+
+function generateSudoku()
+{
+    //random getal genereren tussen 0 en 6
+    let random_nmbr = Math.floor(Math.random() * 7);
+    //dit random_nmbr gebruiken we als index voor de sudokus-array
+    //daarmee selecteren we dus een sudoku
+    let selected_sudoku = sudokus[random_nmbr];
+    let index = 0;
+    //de loop-constructie met een for-loop
+    // for(i = 1; i <= 81; i++){
+    //     if(selected_sudoku[index] == 0){
+    //         document.getElementById(i).innerText = "";
+    //         document.getElementById(i).classList.remove("bg-secondary-subtle");
+
+    //     } else {
+    //         document.getElementById(i).innerText = selected_sudoku[index];
+    //         document.getElementById(i).classList.add("bg-secondary-subtle");
+    //     }
+    //     index++;
+    // }
+    //de loop-constructie met een while-loop
+    // let i = 1;
+    // while(i <= 81){
+    //     if(selected_sudoku[index] == 0){
+    //         document.getElementById(i).innerText = "";
+    //         document.getElementById(i).classList.remove("bg-secondary-subtle");
+
+    //     } else {
+    //         document.getElementById(i).innerText = selected_sudoku[index];
+    //         document.getElementById(i).classList.add("bg-secondary-subtle");
+    //     }
+    //     index++;
+    //     i++;
+    // }
+    //de loop-construcite met een foreach-loop
+    //DE FOREACH LOOP IS BIJ UITSTEK GESCHIKT VOOR HET DOORLOPEN VAN EEN ARRAY
+    selected_sudoku.forEach(zetCijferinGrid);
+}
+
 function zetCijferinGrid(item, index)
 {
     if(item == 0){
         document.getElementById(index+1).innerText = "";
         document.getElementById(index+1).classList.remove("bg-secondary-subtle");
+
     } else {
         document.getElementById(index+1).innerText = item;
         document.getElementById(index+1).classList.add("bg-secondary-subtle");
-        idmapping[index+1][0].push(item);
-        idmapping[index+1][1].push(item);
-        idmapping[index+1][2].push(item);
-    }
-}
-
-function newProblem()
-{
-    let random_nmbr = Math.floor(Math.random() * 7);
-    let selected_sudoku = sudokus[random_nmbr];
-    let index = 0;
-    for(i = 1; i <= 81; i++){
-        if(selected_sudoku[index] == 0){
-            document.getElementById(i).innerText = "";
-            document.getElementById(i).classList.remove("bg-secondary-subtle");
-
-        } else {
-            document.getElementById(i).innerText = selected_sudoku[index];
-            document.getElementById(i).classList.add("bg-secondary-subtle");
-        }
-        index++;
+        if(index < 9)
+            rij1.push(item);
+        else if(index < 18)
+            rij2.push(item);
+        else if(index < 27)
+            rij3.push(item);
+        else if(index < 36)
+            rij4.push(item);
+        else if(index < 45)
+            rij5.push(item);
+        else if(index < 54)
+            rij6.push(item);
+        else if(index < 63)
+            rij7.push(item);
+        else if(index < 72)
+            rij8.push(item);
+        else
+            rij9.push(item);
+        if(index == 0 || index == 9 || index == 18 || index == 27 || index == 36 || index == 45 || index == 54 || index == 63 || index == 72)
+            kolom1.push(item);
     }
 }
