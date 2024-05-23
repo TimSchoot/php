@@ -12,7 +12,8 @@ include "../inc/header.php";
                   </main>
             </div>
             <div class="col-2">
-                <button type="button" class="btn btn-success " onclick="newProblem()">Genereer</button>
+                <button type="button" class="btn btn-success " onclick="generateSudoku()">Genereer</button><br>
+                <button type="button" style=" margin-top: 10px; " class="btn btn-primary" onclick="checkSolution()">Check</button>
                 <div class="row">
                     <div class="col mt-5"><button type="button" class="btn btn-light" style="font-size: 48px;" onclick="selectCijfer(1)">1</button>
                         <button type="button" class="btn btn-light" style="font-size: 48px;" onclick="selectCijfer(2)">2</button>
