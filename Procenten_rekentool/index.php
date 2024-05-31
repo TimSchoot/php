@@ -1,5 +1,6 @@
 <?php
 include "../inc/header.php";
+require_once 'DB/dbconnection.class.php';
 ?>
 <link rel="stylesheet" href="style.css">
  
