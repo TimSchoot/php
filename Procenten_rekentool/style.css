@@ -1,3 +1,30 @@
+.php-inleiding{
+    font-size: 1.5rem;
+    margin-top: 5vh;
+}
+.php-afbeelding img{
+    max-width: 400px;
+    max-height: 400px;
+    margin-top: 3vh;
+}
+.php-vraag{
+    font-size: 1.2rem;
+    margin-top: 2vh;
+}
+.php-vraag input{
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.php-check{
+margin-top: 3vh;
+}
+
+
+.procent-rekentool{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
 p{
     text-align: left;
 }
