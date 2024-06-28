@@ -106,8 +106,11 @@ function solveProblem()
 }
 
 function checkAnswer(antw){
-    if(antw == document.getElementById("inp_antw").value)
-        alert("GOED")
-    else
-        alert("FOUT")
+    const inputAnswer = document.getElementById("inp_antw").value.trim();
+    if(antw == inputAnswer) {
+        alert("GOED");
+        location.reload();
+    } else {
+        alert("FOUT");
+    }
 }

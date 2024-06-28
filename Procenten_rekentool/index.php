@@ -21,7 +21,7 @@ $query = $dbconnect->prepare($sql);
 $query->execute();
 $recset = $query->fetchAll(2);
 ?>
-
+<link rel="stylesheet" href="style.css">
 <div class="container" style="margin-top: 5vh">
     <!-- deel met de vraag -->
     <div class="row">
@@ -50,6 +50,7 @@ $recset = $query->fetchAll(2);
                 </div>
                 <div class="col-4">
                     <button class="btn btn-success" onclick="checkAnswer('<?= $recset[0]['antwoord'] ?>')">Check antwoord</button>
+                    <button class="btn btn-primary" id="volgende-btn" onclick="location.reload()">Volgende vraag</button>
                 </div>
             </div>
         </div>

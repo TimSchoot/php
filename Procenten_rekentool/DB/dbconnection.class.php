@@ -2,6 +2,15 @@
 
 class dbconnection extends PDO
 {
+    //voor localhost.
+
+//    private $host = "localhost";
+//    private $dbname = "rekenen";
+//    private $user = "root";
+//    private $pass = "";
+
+    //voor domein.
+
     private $host = "database-5015937861.webspace-host.com";
     private $dbname = "dbs12990284";
     private $user = "dbu4850378";
